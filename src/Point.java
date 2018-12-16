@@ -24,4 +24,11 @@ public class Point {
     public void setPaths(ArrayList<Path> paths) {
         this.paths = paths;
     }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "Point_name='" + Point_name + '\'' +
+                '}';
+    }
 }
