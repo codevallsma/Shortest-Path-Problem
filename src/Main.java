@@ -10,8 +10,7 @@ public class Main {
         //cost[0][1], cost between A --> B,  which is 8, /cost[0][2], cost between A --> C, which is 12
         int[][] costs = new int[][]{{-1,8,12,4,6},{8,-1,5,9,15},{12,5,-1,2,5},{4,9,2,-1,7},{6,15,5,7,-1}};
 
-        //estructura de a
-        //Iterem per tots els possibles nodes, per aixi poguer creaar la seva estructura interior
+        //We iterate for each possible node values in order to create its internal structure
         for(int i=0; i<costs.length;i++){
 
             ArrayList<Path>  path= new ArrayList<>();
@@ -19,8 +18,6 @@ public class Main {
             Point provisional= new Point(Character.toString(alfabet.charAt(i)), path);
 
             for(int j=0; j<costs[i].length; j++){
-
-                //Verifiquem que no s'estigui referenciant a ell mateix
                 //if(costs[i][j]!=-1){
                     Path opcio_camins= new Path(costs[i][j],Character.toString(alfabet.charAt(j)));
                     ArrayList<Path> camins_per_lletra= provisional.getPaths();
@@ -31,7 +28,7 @@ public class Main {
             //We add to our Arraylist each node that interacts with our TSP problem
             Nodes.add(new Point(Character.toString(alfabet.charAt(i)), path));
         }
-        //Inicialitzem la clase solutiion amb un cost molt gran per assegurar-nos que trobem una solucio millor
+        //We inicialise best with an inifinity value, to make sure there will be another solution with a minor cost
         Solution best= new Solution(infinit);
         Solution startingSolution= new Solution(0);
         //we will need an array of booleans in order to know if we have already visited the node we are inspecting inside the backtracking algorithm

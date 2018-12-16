@@ -45,18 +45,8 @@ public class Backtracking {
                     s.getPath().pop();
 
                 }
-              // s.setTotal_cost(s.getPath().get(i);
             }
         }
         return best;
     }
 }
-/*Another solution when finding theelement of the array
-    //we look the next character after the name of our node, if called 'A' NEXT is 'B'
-    int charValue = current.getPoint_name().charAt(0);
-    final String next = String.valueOf( (char) (charValue + 1));
-                    System.out.println(next);
-
-                            Optional<Point> findNodes = nodes.
-        stream().filter(Point  -> Point.getPoint_name().equals((next)))
-        .findFirst();*/
