@@ -1,10 +1,20 @@
 public class Path {
     private float distance;
-    String point;
+    private String point;
+    private boolean visited;
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
 
     public Path(float distance, String point) {
         this.distance = distance;
         this.point = point;
+        this.visited=false;
     }
 
     public float getDistance() {
